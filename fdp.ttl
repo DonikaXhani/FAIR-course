@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<http://localhost/catalog/> a ldp:DirectContainer, ldp:DirectContainer;
+  ldp:hasMemberRelation <https://w3id.org/fdp/fdp-o#metadataCatalog>, <https://w3id.org/fdp/fdp-o#metadataCatalog>;
+  ldp:membershipResource <http://localhost>, <http://localhost>;
+  dcterms:title "Catalogs", "Catalogs";
+  ldp:contains <http://localhost/catalog/99d1ca00-e0d2-4048-befe-0c084fc842ca>, <http://localhost/catalog/99d1ca00-e0d2-4048-befe-0c084fc842ca> .
+
+<http://localhost/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c> <http://www.w3.org/2000/01/rdf-schema#label>
+    "FAIR Data Point Profile", "FAIR Data Point Profile" .
+
+<http://localhost#accessRights> a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost#publisher> a foaf:Agent;
+  foaf:name "FAIR-course-UT/2021-2022/group1" .
+
+<http://localhost> a <https://w3id.org/fdp/fdp-o#MetadataService>, dcat:DataService,
+    dcat:Resource, <https://w3id.org/fdp/fdp-o#FAIRDataPoint>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost#identifier>;
+  <http://www.w3.org/2000/01/rdf-schema#label> "My FAIR Data Point";
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2022-06-23T11:47:19.5441955Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2022-06-23T10:08:00.8014586Z"^^xsd:dateTime;
+  dcterms:accessRights <http://localhost#accessRights>;
+  dcterms:conformsTo <http://localhost/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c>,
+    <http://localhost/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c>;
+  dcterms:description "This FAIR Data Point deployment is used for the project in the FAIR Principles and FAIRification course at the University of Twente. The metadata presented here is about a COVID-19 in Mexico dataset.";
+  dcterms:hasVersion "1.0";
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  dcterms:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0>;
+  dcterms:publisher <http://localhost#publisher>;
+  dcterms:title "My FAIR Data Point";
+  <http://www.re3data.org/schema/3-0#repositoryIdentifier> <http://localhost#identifier>;
+  dcat:endpointURL <http://localhost>, <http://localhost>;
+  <https://w3id.org/fdp/fdp-o#fdpSoftwareVersion> "FDP:v1.14.0~b5891c7", "FDP:v1.14.0~b5891c7";
+  <https://w3id.org/fdp/fdp-o#metadataCatalog> <http://localhost/catalog/99d1ca00-e0d2-4048-befe-0c084fc842ca> .
+
+<http://localhost#identifier> a <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost" .
+
+<http://localhost/metrics/445c0a70d1e214e545b261559e2842f4> <http://semanticscience.org/resource/SIO_000332>
+    <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/metrics/5d27e854a9e78eb3f663331cd47cdc13> <http://semanticscience.org/resource/SIO_000332>
+    <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777> .
